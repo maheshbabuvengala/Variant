@@ -31,16 +31,20 @@ const ContactForm = () => {
     setMessage("");
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      setMessage("Form submitted successfully!");
-      setFormData({
-        fullName: "",
-        phoneNumber: "",
-        email: "",
-        pickUpDate: "",
-        interest: "",
-        location: "",
+      const response = await fetch("https://variant-backend-j8qf.onrender.com/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
+
+      const result = await response.json();
+      if (response.ok) {
+        setMessage("Form submitted successfully!");
+      } else {
+        setMessage("Failed to submit the form.");
+      }
     } catch (error) {
       setMessage("Error: Unable to submit the form.");
     }
