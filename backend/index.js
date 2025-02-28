@@ -13,7 +13,7 @@ app.use(cors());
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb://localhost:27017/", {
+  .connect("mongodb+srv://maheshvengala4321:Mahesh4321@cluster0.e8gye.mongodb.net/", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
