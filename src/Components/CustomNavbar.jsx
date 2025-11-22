@@ -15,7 +15,7 @@ const CustomNavbar = () => {
         {/* Logo */}
         <Navbar.Brand href="#home">
           <img
-            src="../public/Logo-Remade.png" // Replace with your logo path
+            src="./assets/Logo-Remade.png" // Replace with your logo path
             alt="Variant Logo"
             height="80"
           />
